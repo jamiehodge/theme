@@ -15,7 +15,7 @@ module Theme
 
       r.on(:repository) do |repository|
         begin
-          @repo = Rugged::Repository.new(repository)
+          @repo = Rugged::Repository.new(["repositories", repository].join("/"))
         rescue Rugged::OSError
           r.halt
         end
