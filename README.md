@@ -1,5 +1,13 @@
 # Theme
 
+## Installation
+
+`bundle install`
+
+## Usage
+
+`puma`
+
 ## Repositories
 Place all repositories in `/repositories`
 
