@@ -44,11 +44,11 @@ module Theme
       time = Time.now
 
       Rugged::Commit.create(repo,
-      author: { email: user.email, name: user.name, time: time},
-      message: message,
-      parents: [repo.last_commit],
-      tree: tree_oid,
-      update_ref: "HEAD"
+        author: { email: user.email, name: user.name, time: time},
+        message: message,
+        parents: [repo.last_commit],
+        tree: tree_oid,
+        update_ref: "HEAD"
       )
 
       self.class.new(path: path, repo: repo)
