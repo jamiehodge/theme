@@ -11,3 +11,5 @@ Returns all documents for the directory
 Returns the document
 ### `POST /:repository/:directory/:document`
 Updates the document
+### `GET /:repository/:directory/:document/parent`
+Returns the document's parent revision
