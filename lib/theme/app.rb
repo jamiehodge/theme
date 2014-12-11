@@ -45,8 +45,8 @@ module Theme
 
               r.post do
                 @document
-                .update(user: @user, content: r.params["content"])
-                .to_h.merge(url: r.url)
+                  .update(user: @user, content: r.params["content"])
+                  .to_h.merge(url: r.url)
               end
             end
 
