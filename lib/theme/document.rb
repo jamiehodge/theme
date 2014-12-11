@@ -41,10 +41,9 @@ module Theme
 
       tree_oid = index.write_tree(repo)
 
-      time = Time.now
-
       Rugged::Commit.create(repo,
-        author: { email: user.email, name: user.name, time: time},
+        author: signature(user),
+        committer: signature(user),
         message: message,
         parents: [repo.last_commit],
         tree: tree_oid,
@@ -67,6 +66,10 @@ module Theme
     def oid
       @oid ||= commit.tree.path(path)[:oid]
     rescue Rugged::TreeError
+    end
+
+    def signature(user)
+      { email: user.email, name: user.name, time: Time.now }
     end
   end
 end
