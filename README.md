@@ -21,3 +21,5 @@ Returns the document
 Updates the document
 ### `GET /:repository/:directory/:document/parent`
 Returns the document's parent revision
+
+(test)
